@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.env
+
+.ipynb_checkpoints/
+
+results/artifacts/*.joblib
+
+.DS_Store
+
+# data
+data/raw/*
+data/processed/*
+
+!data/raw/.gitkeep
+!data/processed/.gitkeep
