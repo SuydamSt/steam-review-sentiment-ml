@@ -21,15 +21,15 @@ to reproduce:
 fields used:
 
 - 'review_text'
-- 'review score' {-1, 1}
+- 'review_score' {-1, 1}
 
 ## approach
 
 1. data exploration
 2. tf-idf text features
-3. logistical regression baseline (default positive)
+3. logistic regression baseline (default positive)
 4. class weighting to adjust imbalance
-5. result evaluation (no accuracy. used confusion matrices and f1-score)
+5. result evaluation (accuracy not reliable. used confusion matrices and f1-score)
 
 ## outcome
 
@@ -37,8 +37,10 @@ fields used:
 - macro f1 improved with class weighting
 - precision dropped to gain stronger negative recall
 
+![confusion matrix for final logistic regression model](images/confusion_matrix_logreg.png)
+
 ## limitations
 
 - data imbalance
 - short / not genuine reviews
-- public data (the steam community are scary)
+- public sourced reviews include lots of sarcasm and noise
