@@ -1,55 +1,44 @@
-# steam review sentiment analysis (ml project)
+# steam review sentiment analysis (ml)
 
 ## overview
 
-general: project is intended for personal exploration of sentiment classification on steam game reviews using ml techniques.
-learning outcomes: understanding text features, class imbalance and model choices and their performance
+- a personal project used to explore sentiment classification on steam game reviews.
+- focus on:
+  -- text features
+  -- class imbalance
+  -- model evaluation
 
 ## dataset
 
------ NOTE: DUE TO FILE LIMITS THE DATASET IS NOT INCLUDED IN THIS REPOSITORY -----
+dataset is not included in repo due to size
 
-source: kaggle steam reviews dataset => https://www.kaggle.com/datasets/andrewmvd/steam-reviews
+to reproduce:
 
-1. download the linked dataset
-2. place the raw csv file in 'data/raw'
-3. run 01_exploration.ipynb to generate processed data
+1. download dataset: https://www.kaggle.com/datasets/andrewmvd/steam-reviews
+2. put csv into 'data/raw/'
+3. run notebooks in order
 
------ NOTE: DUE TO FILE LIMITS THE DATASET IS NOT INCLUDED IN THIS REPOSITORY -----
+fields used:
 
-fields:
-: review_text
-: review_score {-1,1}
-
-data was cleaned to remove all empty / invalid reviews
+- 'review_text'
+- 'review score' {-1, 1}
 
 ## approach
 
-1. exploratory da
-2. text feature engineering using tf-idf
-3. creating abaseline logistic regression
-4. handling class imbalance and class weight
-5. learning evaluation through confusion matrix and f1-score data
+1. data exploration
+2. tf-idf text features
+3. logistical regression baseline (default positive)
+4. class weighting to adjust imbalance
+5. result evaluation (no accuracy. used confusion matrices and f1-score)
 
-## models
+## outcome
 
-: a logistic regression as the baseline
-: logistic regression with class weighting as the current
-
-## results
-
-accuracy: ~94%
-macro f1 improved over time with different class weighting approaches
-negative class recal was improved significantly from initial setup at the cost of minor precision
+- ~94% accuracy
+- macro f1 improved with class weighting
+- precision dropped to gain stronger negative recall
 
 ## limitations
 
-heavy imbalance in dataset
-public sourced and unmoderated reviews lead to sarcastic and short reviews, hard to classify
-stopword handling required modification to prevent heavy data loss on training
-
-## future work
-
-comparing against naive bayes
-threshhold tuning usin predicted probabilities
-experimenting with bigrams in a more systematic way
+- data imbalance
+- short / not genuine reviews
+- public data (the steam community are scary)
